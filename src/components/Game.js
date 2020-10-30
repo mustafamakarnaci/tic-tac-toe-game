@@ -26,44 +26,24 @@ const Game = () => {
     setXIsNext(!xIsNext);
   };
 
-
   const jumpTo = (step) => {
     setStepNumber(step);
     setXIsNext(step % 2 === 0);
   };
 
-
-
-  const moves = () =>
-    history.map((step, move) => {
-
-      const desc = move ? `Go to move ${move}` : "Go to Start";
-
-      return (
-
-        <button type="button" key={move}
-          className="list-group-item list-group-item-action list-group-item-dark py-0 mt-1 rounded"
-          onClick={() => jumpTo(move)}>{desc}</button>
-
-      );
-    });
-
   return (
-    <div className="game container mt-4 p-4 bg-dark">
-      <div className="game-board">
-        <div className="mr-4" style={{ float: "left" }}>
-          <Board squares={history[stepNumber]} onClick={handleClick} />
-        </div>
+    <div className="container aaa" >
+      <div className="h-25 bg-warning">
+        <h1 className="pt-1 display-4">Tic Tac Toe</h1>
 
-        <div style={{ float: "left" }}>
-          <h4 className="alert alert-dark">History</h4>
-          <div className="list-group list-group-flush">
-            {moves()}
-          </div>
-        </div>
-        <div style={{ float: "right" }}>
-          <h4 className="alert alert-dark p-2 ml-2">{winner ? "Winner " + winner : "Next player: " + xO}</h4>
-        </div>
+        <button type="button"
+          className="btn btn-primary text-light btn-lg mt-3"
+          onClick={() => jumpTo(0)}>New Game</button>
+      </div>
+
+      <div className="h-75" style={{ position: "relative", background: "black" }}>
+        <Board squares={history[stepNumber]} onClick={handleClick} />
+        <h4 className="text-light p-2">{winner ? "Winner " + winner : "Next player: " + xO}</h4>
       </div>
     </div>
   )

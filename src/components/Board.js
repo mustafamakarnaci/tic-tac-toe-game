@@ -17,19 +17,37 @@ const Board = ({ squares, onClick }) => {
     return (
         <div className="board">
             <div className="board-row">
-                {renderSquare(0)}
-                {renderSquare(1)}
-                {renderSquare(2)}
+                <div className="board-col">
+                    {renderSquare(0)}
+                </div>
+                <div className="board-col-mid">
+                    {renderSquare(1)}
+                </div>
+                <div className="board-col">
+                    {renderSquare(2)}
+                </div>
             </div>
-            <div className="board-row">
-                {renderSquare(3)}
-                {renderSquare(4)}
-                {renderSquare(5)}
+            <div className="board-row-mid">
+                <div className="board-col">
+                    {renderSquare(3)}
+                </div>
+                <div className="board-col-mid">
+                    {renderSquare(4)}
+                </div>
+                <div className="board-col">
+                    {renderSquare(5)}
+                </div>
             </div>
-            <div className="board-row">
-                {renderSquare(6)}
-                {renderSquare(7)}
-                {renderSquare(8)}
+            <div className="board-row-mid">
+                <div className="board-col">
+                    {renderSquare(6)}
+                </div>
+                <div className="board-col-mid">
+                    {renderSquare(7)}
+                </div>
+                <div className="board-col">
+                    {renderSquare(8)}
+                </div>
             </div>
         </div>
     )
